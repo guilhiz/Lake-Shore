@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { api } from "../../config/api"
-import * as S from "./style"
+import * as S from "./styles"
 
 function SignIn() {
     const [email, setEmail] = useState("")
@@ -25,7 +25,7 @@ function SignIn() {
         <S.Container>
             <S.Card>
                 <S.Form onSubmit={handleChange}>
-                    <S.Input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required={true} />
+                    <S.Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required={true} />
                     <S.Input type="password" placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)} required={true} />
                     <S.ButtonSubmit>Entrar</S.ButtonSubmit>
                     <Link to="/sign-up">
