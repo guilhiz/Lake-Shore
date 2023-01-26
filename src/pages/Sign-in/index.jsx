@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { api } from "../../config/api"
 import * as S from "./style"
-import axios from 'axios'
 
 function SignIn() {
     const [email, setEmail] = useState("")
@@ -14,7 +14,7 @@ function SignIn() {
 
     const signIn = async () => {
         try {
-            const result = await axios.post('http:/www.localhost:5000/sign-in', { email, password })
+            const result = await api.post('/sign-in', { email, password })
             console.log(result);
         } catch (error) {
             console.log(error);
