@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCartSimple, User, MagnifyingGlass } from "phosphor-react";
+import { ShoppingCartSimple, User, MagnifyingGlass, House } from "phosphor-react";
 import * as S from "./styles";
 
 function Header() {
@@ -10,6 +10,9 @@ function Header() {
         <h1>Lake Shore</h1>
         <S.IconsGroup>
           <MagnifyingGlass size={32} color="#fffffe" />
+          <Link to="/">
+            <House size={32} color="#fffffe" />
+          </Link>
           <Link to="/sign-in">
             <User size={32} color="#fffffe" />
           </Link>
