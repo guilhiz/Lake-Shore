@@ -7,7 +7,7 @@ function Header() {
   return (
     <S.Header>
       <S.Content>
-        <h1>Lake Shore</h1>
+        <h1>LakeShore</h1>
         <S.IconsGroup>
           <MagnifyingGlass size={32} color="#fffffe" />
           <Link to="/">
