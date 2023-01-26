@@ -5,6 +5,9 @@ export const Header = styled.header`
   height: 80px;
   padding: 17px 80px;
   background-color: #232946;
+  position: fixed;
+  top: 0;
+  left: 0;
 `;
 
 export const Content = styled.div`
