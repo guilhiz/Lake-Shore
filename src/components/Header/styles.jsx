@@ -8,6 +8,7 @@ export const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9;
 `;
 
 export const Content = styled.div`
@@ -15,6 +16,8 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     font-size: 38px;
     line-height: 40px;
     letter-spacing: 0.05em;
