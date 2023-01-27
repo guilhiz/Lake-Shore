@@ -34,7 +34,61 @@ function Home() {
           </SwiperSlide>
         </Swiper>
         <S.SectionProduct>
-          <h2>Category 1</h2>
+          <h2>Category 1 </h2>
+          <S.FilterList>
+            <li>
+              Mais recentes
+              <div></div>
+            </li>
+            <li>
+              Mais vendido
+              <div></div>
+            </li>
+            <li>
+              Em destaque
+              <div></div>
+            </li>
+          </S.FilterList>
+          <ProductCarousel />
+          <p>Ver mais dessa categoria</p>
+        </S.SectionProduct>
+
+        <S.SectionProduct>
+          <h2>Category 2</h2>
+          <S.FilterList>
+            <li>
+              Mais recentes
+              <div></div>
+            </li>
+            <li>
+              Mais vendido
+              <div></div>
+            </li>
+            <li>
+              Em destaque
+              <div></div>
+            </li>
+          </S.FilterList>
+          <ProductCarousel />
+          <p>Ver mais dessa categoria</p>
+        </S.SectionProduct>
+
+        <S.SectionProduct>
+          <h2>Category 3</h2>
+          <S.FilterList>
+            <li>
+              Mais recentes
+              <div></div>
+            </li>
+            <li>
+              Mais vendido
+              <div></div>
+            </li>
+            <li>
+              Em destaque
+              <div></div>
+            </li>
+          </S.FilterList>
           <ProductCarousel />
           <p>Ver mais dessa categoria</p>
         </S.SectionProduct>
