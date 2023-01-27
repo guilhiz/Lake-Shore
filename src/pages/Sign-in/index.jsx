@@ -1,11 +1,14 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../config/api"
+import { AuthContext } from "../../contexts/auth/AuthContext"
 import * as S from "./styles"
 
 function SignIn() {
+    const { saveTokenAndUserId } = useContext(AuthContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
     function handleChange(e) {
         e.preventDefault()
@@ -15,8 +18,10 @@ function SignIn() {
     const signIn = async () => {
         try {
             const result = await api.post('/sign-in', { email, password })
-            console.log(result);
+            saveTokenAndUserId(result.data)
+            navigate("/")
         } catch (error) {
+            alert("Os dados estão incorretos!")
             console.log(error);
         }
     }
