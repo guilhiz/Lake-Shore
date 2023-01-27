@@ -1,4 +1,5 @@
 import React from "react";
+import ProductCarousel from "../../components/ProductCarousel";
 import * as S from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,6 +33,11 @@ function Home() {
             <img src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/macbook-new.jpg" alt="" />
           </SwiperSlide>
         </Swiper>
+        <S.SectionProduct>
+          <h2>Category 1</h2>
+          <ProductCarousel />
+          <p>Ver mais dessa categoria</p>
+        </S.SectionProduct>
       </S.Content>
     </S.Container>
   );
