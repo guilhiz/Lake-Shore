@@ -17,8 +17,8 @@ export const Card = styled.div`
   overflow: visible;
   border-radius: 0.5rem;
   cursor: pointer;
+  box-shadow: 4px 4px 8px 0px rgba(180, 180, 207, 0.75);
   :hover {
-    box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
     scale: 1.05;
   }
 `;
