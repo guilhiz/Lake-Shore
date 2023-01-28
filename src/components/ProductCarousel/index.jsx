@@ -12,6 +12,20 @@ function ProductCarousel() {
   console.log(products);
   return (
     <S.Content>
+      <S.FilterList>
+        <li>
+          Mais recentes
+          <div></div>
+        </li>
+        <li>
+          Mais vendido
+          <div></div>
+        </li>
+        <li>
+          Em destaque
+          <div></div>
+        </li>
+      </S.FilterList>
       <Swiper
         spaceBetween={30}
         slidesPerView={5}
@@ -39,6 +53,7 @@ function ProductCarousel() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <p>Ver mais dessa categoria</p>
     </S.Content>
   );
 }

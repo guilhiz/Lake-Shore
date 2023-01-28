@@ -1,4 +1,5 @@
 import React from "react";
+import { api } from "../../config/api";
 import ProductCarousel from "../../components/ProductCarousel";
 import * as S from "./styles";
 
@@ -35,62 +36,22 @@ function Home() {
         </Swiper>
         <S.SectionProduct>
           <h2>Mobiliário </h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
           <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
         </S.SectionProduct>
 
         <S.SectionProduct>
           <h2>Vestuário</h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
           <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
         </S.SectionProduct>
 
         <S.SectionProduct>
           <h2>Eletrônicos</h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
           <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
+        </S.SectionProduct>
+
+        <S.SectionProduct>
+          <h2>Serviços</h2>
+          <ProductCarousel />
         </S.SectionProduct>
       </S.Content>
     </S.Container>
