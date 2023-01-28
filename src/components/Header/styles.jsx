@@ -9,6 +9,7 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   z-index: 9;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const Content = styled.div`
@@ -16,12 +17,13 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   h1 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Playball";
+    font-style: normal;
     font-weight: 700;
-    font-size: 38px;
-    line-height: 40px;
-    letter-spacing: 0.05em;
+    font-size: 48px;
+    line-height: 48px;
     color: #fffffe;
+    text-shadow: 0px 4px 2px rgba(255, 255, 255, 0.4);
   }
 `;
 

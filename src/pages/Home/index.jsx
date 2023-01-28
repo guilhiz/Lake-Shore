@@ -34,7 +34,7 @@ function Home() {
           </SwiperSlide>
         </Swiper>
         <S.SectionProduct>
-          <h2>Category 1 </h2>
+          <h2>Mobiliário </h2>
           <S.FilterList>
             <li>
               Mais recentes
@@ -54,7 +54,7 @@ function Home() {
         </S.SectionProduct>
 
         <S.SectionProduct>
-          <h2>Category 2</h2>
+          <h2>Vestuário</h2>
           <S.FilterList>
             <li>
               Mais recentes
@@ -74,7 +74,7 @@ function Home() {
         </S.SectionProduct>
 
         <S.SectionProduct>
-          <h2>Category 3</h2>
+          <h2>Eletrônicos</h2>
           <S.FilterList>
             <li>
               Mais recentes
