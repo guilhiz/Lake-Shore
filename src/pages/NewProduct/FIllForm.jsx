@@ -13,13 +13,15 @@
 
    async function register(event) {
         event.preventDefault();
-        
+        const token = localStorage.getItem("token-access")
+        const config = { headers: { Authorization: `Bearer ${token}` } };
+
         try {
-            await api.post("/new-product", { name, image, description, price, category });
+            await api.post("/new-product", { name, image, description, price, category }, config);
             alert("Produto cadastrado com sucesso");
             navigate("/");
         } catch (error) {
-            alert(error.message);            
+            alert(error.message);
         }
     }
     return (
