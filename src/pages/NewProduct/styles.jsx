@@ -53,7 +53,7 @@ export const FormStyled = styled.form`
         font-size: 17px;
         line-height: 15px;
         padding: 0.5rem;
-    }        
+    }
   }
   button{
     width: 50%;
