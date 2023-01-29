@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import { products } from "./mockProduct";
+import { ClipLoader } from "react-spinners";
 import { ShoppingCartSimple } from "phosphor-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,8 +8,15 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function ProductCarousel() {
-  console.log(products);
+function ProductCarousel({ products }) {
+  if (products === null) {
+    return (
+      <S.ContainerLoading>
+        <ClipLoader color="#ff8906" size={200} />
+      </S.ContainerLoading>
+    );
+  }
+
   return (
     <S.Content>
       <S.FilterList>
@@ -30,17 +37,18 @@ function ProductCarousel() {
         spaceBetween={30}
         slidesPerView={5}
         grabCursor={true}
-        loop={true}
         navigation={true}
         modules={[Navigation]}
         className="carousel"
       >
-        {products.map((p) => (
-          <SwiperSlide>
+        {products.map((p, i) => (
+          <SwiperSlide key={i}>
             <S.Card>
-              <S.CardImg></S.CardImg>
+              <S.CardImg>
+                <img src={p.image} alt="" />
+              </S.CardImg>
               <S.CardInfo>
-                <h3>{p.title}</h3>
+                <h3>{p.name}</h3>
                 <p>{p.description}</p>
               </S.CardInfo>
               <S.CardFooter>
