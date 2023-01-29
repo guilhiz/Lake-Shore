@@ -51,6 +51,9 @@ export const CardInfo = styled.div`
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #232946;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   > p {

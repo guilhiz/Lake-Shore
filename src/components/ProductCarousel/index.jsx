@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import { ClipLoader } from "react-spinners";
 import { ShoppingCartSimple } from "phosphor-react";
+import { useFormatter } from "../../hooks";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -52,7 +53,7 @@ function ProductCarousel({ products }) {
                 <p>{p.description}</p>
               </S.CardInfo>
               <S.CardFooter>
-                <span>{p.price}</span>
+                <span>{useFormatter.format(p.price)}</span>
                 <div>
                   <ShoppingCartSimple size={25} color="#000000" />
                 </div>
