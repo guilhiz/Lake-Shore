@@ -1,5 +1,6 @@
 import React from "react";
 import { useProducts } from "./hooks";
+import { useAos } from "../../hooks";
 import ProductCarousel from "../../components/ProductCarousel";
 import * as S from "./styles";
 
@@ -11,6 +12,7 @@ import "swiper/css/navigation";
 
 function Home() {
   const { furniture, electronics, clothes, services } = useProducts();
+  useAos()
 
   return (
     <S.Container>
@@ -24,21 +26,39 @@ function Home() {
           className="carousel"
         >
           <SwiperSlide>
-            <img
-              src="https://d2r00w08fz6ft0.cloudfront.net/groover-demo/images/main-slider/2.a289c10d30d58800c033d18144706456.jpg"
-              alt=""
-            />
+            <S.FeaturedCard color="#ff8906" top="55%">
+              <img
+                src="https://d2r00w08fz6ft0.cloudfront.net/groover-demo/images/main-slider/2.a289c10d30d58800c033d18144706456.jpg"
+                alt="imagem ilustrativa"
+              />
+              <h3 data-aos="fade-right">Tudo para o verão </h3>
+              <p data-aos="fade-left">aproveite a estação mais quente do ano</p>
+            </S.FeaturedCard>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/ipad.jpg" alt="" />
+            <S.FeaturedCard color="#0E4CB3" top="50%">
+              <img
+                src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/ipad.jpg"
+                alt="imagem ilustrativa"
+              />
+              <h3>Ofertas imperdiveis</h3>
+              <p>#shoping</p>
+            </S.FeaturedCard>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/macbook-new.jpg" alt="" />
+            <S.FeaturedCard color="#FC4505" top="51%">
+              <img
+                src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/macbook-new.jpg"
+                alt="imagem ilustrativa"
+              />
+              <h3>Especial Eletro</h3>
+              <p>para quem ama inovar</p>
+            </S.FeaturedCard>
           </SwiperSlide>
         </Swiper>
 
         <S.SectionProduct>
-          <h2>Mobiliário </h2>
+          <h2 >Mobília </h2>
           <ProductCarousel products={furniture} />
         </S.SectionProduct>
 
