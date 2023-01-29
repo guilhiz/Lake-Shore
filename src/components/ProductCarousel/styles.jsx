@@ -6,6 +6,18 @@ export const Content = styled.div`
     max-height: 450px;
     padding: 35px 50px;
   }
+
+  > p {
+    font-size: 20px;
+    line-height: 22px;
+    color: #94a0e6;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    :hover {
+      color: #232946;
+    }
+  }
 `;
 
 export const Card = styled.div`
@@ -73,4 +85,45 @@ export const CardFooter = styled.div`
       background-color: #ffcaa6;
     }
   }
+`;
+
+export const FilterList = styled.ul`
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+
+  color: #94a0e6;
+  > li {
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+    div {
+      background-color: #ff8906;
+      width: 0%;
+      height: 3px;
+      transition: all ease-in 0.3s;
+    }
+    :hover {
+      color: #ff8906;
+      div {
+        width: 100%;
+      }
+    }
+  }
+  li:nth-child(1) {
+    color: #ff8906;
+    > div {
+      width: 100%;
+    }
+  }
+`;
+
+export const ContainerLoading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  min-width: 100%;
 `;

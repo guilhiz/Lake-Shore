@@ -1,4 +1,5 @@
 import React from "react";
+import { useProducts } from "./hooks";
 import ProductCarousel from "../../components/ProductCarousel";
 import * as S from "./styles";
 
@@ -9,6 +10,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 function Home() {
+   const { furniture, electronics, clothes, services } = useProducts();
+
+   
+
   return (
     <S.Container>
       <S.Content>
@@ -33,64 +38,25 @@ function Home() {
             <img src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/macbook-new.jpg" alt="" />
           </SwiperSlide>
         </Swiper>
+
         <S.SectionProduct>
           <h2>Mobiliário </h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
-          <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
+          <ProductCarousel products={furniture} />
         </S.SectionProduct>
 
         <S.SectionProduct>
           <h2>Vestuário</h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
-          <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
+          <ProductCarousel products={electronics} />
         </S.SectionProduct>
 
         <S.SectionProduct>
           <h2>Eletrônicos</h2>
-          <S.FilterList>
-            <li>
-              Mais recentes
-              <div></div>
-            </li>
-            <li>
-              Mais vendido
-              <div></div>
-            </li>
-            <li>
-              Em destaque
-              <div></div>
-            </li>
-          </S.FilterList>
-          <ProductCarousel />
-          <p>Ver mais dessa categoria</p>
+          <ProductCarousel products={clothes} />
+        </S.SectionProduct>
+
+        <S.SectionProduct>
+          <h2>Serviços</h2>
+          <ProductCarousel products={services} />
         </S.SectionProduct>
       </S.Content>
     </S.Container>
