@@ -10,9 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 function Home() {
-   const { furniture, electronics, clothes, services } = useProducts();
-
-   
+  const { furniture, electronics, clothes, services } = useProducts();
 
   return (
     <S.Container>
@@ -46,12 +44,12 @@ function Home() {
 
         <S.SectionProduct>
           <h2>Vestuário</h2>
-          <ProductCarousel products={electronics} />
+          <ProductCarousel products={clothes} />
         </S.SectionProduct>
 
         <S.SectionProduct>
           <h2>Eletrônicos</h2>
-          <ProductCarousel products={clothes} />
+          <ProductCarousel products={electronics} />
         </S.SectionProduct>
 
         <S.SectionProduct>

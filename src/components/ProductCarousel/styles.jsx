@@ -37,13 +37,13 @@ export const Card = styled.div`
 
 export const CardImg = styled.div`
   background-color: #ffcaa6;
-  height: 234px;
+  height: 220px;
   width: 230px;
   border-radius: 0.5rem;
 `;
 
 export const CardInfo = styled.div`
-  padding-top: 5%;
+  padding-top: 2%;
   > h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -57,11 +57,16 @@ export const CardInfo = styled.div`
   }
 
   > p {
+    min-height: 44px;
+    max-height: 44px;
     font-family: "Roboto", sans-serif;
     font-weight: 400px;
     font-size: 0.9em;
     padding-bottom: 10px;
     color: #232946;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
   }
 `;
 
