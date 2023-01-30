@@ -7,7 +7,6 @@ export const Content = styled.div`
   .carousel {
     width: 100%;
     max-height: 450px;
-
     padding: 35px 50px;
   }
 

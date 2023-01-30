@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "phosphor-react";
+import { useProducts } from "../../pages/Home/hooks";
 import * as S from "./styles";
 
 function Header() {
+  const { cart } = useProducts();
+  console.log(cart);
   return (
     <S.Header>
       <S.Content>
         <Link to="/">
-
           <h1>Lake Shore</h1>
         </Link>
 

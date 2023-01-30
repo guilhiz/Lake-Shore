@@ -1,17 +1,12 @@
-import { AuthContext } from './AuthContext'
+import { AuthContext } from "./AuthContext";
 
-function AuthProvider({children}){
+function AuthProvider({ children }) {
+  const saveTokenAndUserId = (data) => {
+    localStorage.setItem("token-access", data.token);
+    localStorage.setItem("user-access", data.user_id);
+  };
 
-    const saveTokenAndUserId = (data) => {
-        localStorage.setItem("token-access", data.token)
-        localStorage.setItem("user-access", data.user_id)
-    }
-
-    return (
-        <AuthContext.Provider value={{saveTokenAndUserId}}>
-            {children}
-        </AuthContext.Provider>
-    )
+  return <AuthContext.Provider value={{ saveTokenAndUserId }}>{children}</AuthContext.Provider>;
 }
 
-export default AuthProvider
+export default AuthProvider;
