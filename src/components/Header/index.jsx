@@ -8,22 +8,23 @@ function Header() {
     <S.Header>
       <S.Content>
         <Link to="/">
+
           <h1>LakeShore</h1>
         </Link>
 
         <S.IconsGroup>
-          <MagnifyingGlass size={32} color="#fffffe" />
+          <MagnifyingGlass size={32} color="#b8c1ec" />
           <Link to="/">
-            <House size={32} color="#fffffe" />
+            <House size={32} color="#b8c1ec" />
           </Link>
           <Link to="/new-product">
-            <PlusCircle size={32} color="#fffffe" />
+            <PlusCircle size={32} color="#b8c1ec" />
           </Link>
           <Link to="/sign-in">
-            <User size={32} color="#fffffe" />
+            <User size={32} color="#b8c1ec" />
           </Link>
 
-          <ShoppingCartSimple size={32} color="#fffffe" />
+          <ShoppingCartSimple size={32} color="#b8c1ec" />
         </S.IconsGroup>
       </S.Content>
     </S.Header>
