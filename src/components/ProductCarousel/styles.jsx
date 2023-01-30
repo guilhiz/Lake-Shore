@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #d4d8f0;
   .carousel {
     width: 100%;
     max-height: 450px;
+
     padding: 35px 50px;
   }
 
@@ -13,7 +17,7 @@ export const Content = styled.div`
     color: #94a0e6;
     text-align: center;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 40px;
     :hover {
       color: #232946;
     }
