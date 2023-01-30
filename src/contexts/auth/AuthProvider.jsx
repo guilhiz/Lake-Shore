@@ -10,11 +10,7 @@ function AuthProvider({ children }) {
     localStorage.setItem("user-access", data.user_id);
   };
 
-  return (
-    <AuthContext.Provider value={{ saveTokenAndUserId, quantityProducts, setQuantityProducts }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ saveTokenAndUserId, setQuantityProducts }}>{children}</AuthContext.Provider>;
 }
 
 export default AuthProvider;

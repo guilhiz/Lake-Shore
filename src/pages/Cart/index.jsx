@@ -25,7 +25,6 @@ function Cart() {
       const response = await api.get("/cart/products", config);
       const data = response.data;
       setProducts(data.products);
-      console.log(data.products);
       setSumProducts(data.sumProducts);
       setCart_id(data.cart_id);
     } catch (error) {
@@ -38,10 +37,9 @@ function Cart() {
     const token = localStorage.getItem("token-access");
     const config = { headers: { Authorization: `Bearer ${token}` } };
     try {
-      const res = await api.post("/closeShoppingCart", { cart_id }, config);
-      console.log(res);
-      alert("Pedido feito com sucesso");
-      navigate("/");
+      await api.post("/closeShoppingCart", { cart_id }, config);
+      setQuantityProducts(0);
+    //   navigate("/checkout");
     } catch (err) {
       if (err.status === 401) navigate("/sign-in");
       console.log(err);

@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/auth/AuthContext";
+
 import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "phosphor-react";
 
 import * as S from "./styles";
 
 function Header() {
-  const { quantityProducts } = useContext(AuthContext);
   const quantity = localStorage.getItem("quantity-products");
 
   return (
