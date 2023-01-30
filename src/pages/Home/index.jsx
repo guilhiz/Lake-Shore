@@ -2,6 +2,7 @@ import React from "react";
 import { useProducts } from "./hooks";
 import { useAos } from "../../hooks";
 import ProductCarousel from "../../components/ProductCarousel";
+import Footer from "../../components/Footer";
 import * as S from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,7 +27,7 @@ function Home() {
           className="carousel"
         >
           <SwiperSlide>
-            <S.FeaturedCard color="#ff8906" top="55%">
+            <S.FeaturedCard color="#ff8906">
               <img
                 src="https://d2r00w08fz6ft0.cloudfront.net/groover-demo/images/main-slider/2.a289c10d30d58800c033d18144706456.jpg"
                 alt="imagem ilustrativa"
@@ -36,7 +37,7 @@ function Home() {
             </S.FeaturedCard>
           </SwiperSlide>
           <SwiperSlide>
-            <S.FeaturedCard color="#0E4CB3" top="50%">
+            <S.FeaturedCard color="#0E4CB3">
               <img
                 src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/ipad.jpg"
                 alt="imagem ilustrativa"
@@ -46,7 +47,7 @@ function Home() {
             </S.FeaturedCard>
           </SwiperSlide>
           <SwiperSlide>
-            <S.FeaturedCard color="#FC4505" top="51%">
+            <S.FeaturedCard color="#FC4505">
               <img
                 src="https://chekromul.github.io/uikit-ecommerce-template/images/promo/macbook-new.jpg"
                 alt="imagem ilustrativa"
@@ -77,6 +78,7 @@ function Home() {
           <ProductCarousel products={services} />
         </S.SectionProduct>
       </S.Content>
+      <Footer />
     </S.Container>
   );
 }

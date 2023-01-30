@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
+  max-width: 1366px;
   height: 100%;
+  margin: 0 auto;
   background-color: #d4d8f0;
-  margin-top: 80px;
+  margin-top: 60px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 `;
 
 export const Content = styled.div`
-  .carousel {
+  >.carousel {
     width: 100%;
-    height: 80vh;
+    height: 85vh;
+    max-height: 528px;
   }
 
   img {
@@ -24,8 +27,9 @@ export const Content = styled.div`
 
 export const SectionProduct = styled.section`
   width: 100%;
-  height: 85vh;
-  >h2 {
+  height: 90vh;
+  max-height: 559px;
+  > h2 {
     font-weight: 700;
     font-size: 32px;
     line-height: 34px;
@@ -38,8 +42,9 @@ export const SectionProduct = styled.section`
 
 export const FeaturedCard = styled.div`
   position: relative;
+  height: 100%;
 
-  >h3 {
+  > h3 {
     position: absolute;
     font-weight: 700;
     top: 40%;
@@ -48,13 +53,12 @@ export const FeaturedCard = styled.div`
     font-size: 75px;
     text-shadow: 0px 0px 5px black;
   }
-  >p {
+  > p {
     position: absolute;
-    top: ${(props) => props.top};
+    top: 55%;
     left: 46%;
     color: #ffffff;
     font-size: 25px;
     text-shadow: 0px 0px 5px black;
   }
-
 `;
