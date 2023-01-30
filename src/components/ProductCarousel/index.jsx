@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../contexts/auth/AuthContext";
 import * as S from "./styles";
 import { ClipLoader } from "react-spinners";
 import { ShoppingCartSimple } from "phosphor-react";
@@ -13,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 function ProductCarousel({ products }) {
   const { cart, setCart } = useProducts();
+  const { setQuantityProducts } = useContext(AuthContext);
   const navigate = useNavigate();
 
   function addProductCart(product) {
@@ -24,13 +26,13 @@ function ProductCarousel({ products }) {
       const token = localStorage.getItem("token-access");
       const config = { headers: { Authorization: `Bearer ${token}` } };
       const response = await api.post("/addItemCart", { cart_id: cart ? cart._id : null, product_id }, config);
+      setQuantityProducts((current) => current + 1);
       setCart(response.data);
     } catch (error) {
       if (error.status === 401) navigate("/sign-in");
       console.log(error);
     }
   };
- 
 
   if (products === null) {
     return (
