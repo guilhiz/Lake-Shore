@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { AuthContext } from "../../contexts/auth/AuthContext";
+
 import { useNavigate } from "react-router-dom";
 import { api } from "../../config/api";
 import { ClipLoader } from "react-spinners";
@@ -10,7 +10,7 @@ function Cart() {
   const [products, setProducts] = useState(null);
   const [sumProducts, setSumProducts] = useState(0);
   const [cart_id, setCart_id] = useState(null);
-  const { setQuantityProducts } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,8 +38,7 @@ function Cart() {
     const config = { headers: { Authorization: `Bearer ${token}` } };
     try {
       await api.post("/closeShoppingCart", { cart_id }, config);
-      setQuantityProducts(0);
-    //   navigate("/checkout");
+      navigate("/checkout");
     } catch (err) {
       if (err.status === 401) navigate("/sign-in");
       console.log(err);

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { AuthContext } from "../../contexts/auth/AuthContext";
 import { Link } from "react-router-dom";
 
 import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "phosphor-react";
@@ -6,6 +7,7 @@ import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "ph
 import * as S from "./styles";
 
 function Header() {
+  const { quantityProducts } = useContext(AuthContext);
   const quantity = localStorage.getItem("quantity-products");
 
   return (
