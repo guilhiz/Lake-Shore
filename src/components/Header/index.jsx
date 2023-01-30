@@ -24,7 +24,7 @@ function Header() {
             <User size={32} color="#b8c1ec" />
           </Link>
           <Link to="/cart">
-            <ShoppingCartSimple size={32} color="#fffffe" />
+            <ShoppingCartSimple size={32} color="#b8c1ec" />
           </Link>
         </S.IconsGroup>
       </S.Content>
