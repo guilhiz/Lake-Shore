@@ -52,6 +52,8 @@ function Cart() {
                     })}
                 </S.ContainerProducts>
             </S.Card>
+            <S.CheckoutButton onClick={() => navigate("/checkout")}> Finalizar compra</S.CheckoutButton>
+
         </S.Container>
     )
 }

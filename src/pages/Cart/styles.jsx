@@ -79,3 +79,12 @@ export const Line = styled.div`
     height: 1px;
     background: black;
 `
+export const CheckoutButton = styled.button`
+    background-color: #060e38;
+    width: 250px;
+    height: 40px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 20px;
+`

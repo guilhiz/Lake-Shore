@@ -45,14 +45,14 @@ export const FormStyled = styled.form`
   input{
     margin-bottom: 18px;
     height: 50px;
-    border-radius: 4px;
+    border-radius: 6px;
     border-color: #979ec5;
+    padding: 8px;
     ::placeholder{
         font-family: "Roboto";
         font-weight: 400;
         font-size: 17px;
         line-height: 15px;
-        padding: 0.5rem;
     }
   }
   button{
