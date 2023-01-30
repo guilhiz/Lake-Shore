@@ -17,7 +17,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-export const InputsBox = styled.div`
+export const Button = styled.button`
+    width:300px;
+    height: 40px;
+    background-color: #16162e;
+    color:#ffffff;
+    margin-top: 20px;
+    border-radius: 8px;
+`
+export const InputsBox = styled.form`
     display: flex;
     flex-direction: column;
     margin-top: 30px;

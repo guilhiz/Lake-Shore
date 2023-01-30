@@ -1,4 +1,5 @@
 import React from "react";
+import { useFooter } from "./hooks";
 import * as S from "./styles";
 import {
   FacebookLogo,
@@ -12,8 +13,9 @@ import {
 } from "phosphor-react";
 
 function Footer() {
+  useFooter()
   return (
-    <S.Container>
+    <S.Container data-aos="fade-up">
       <S.Content>
         <div>
           <h2>Lake Shore</h2>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "phosphor-react";
+
 import * as S from "./styles";
 
 function Header() {
@@ -8,7 +9,6 @@ function Header() {
     <S.Header>
       <S.Content>
         <Link to="/">
-
           <h1>Lake Shore</h1>
         </Link>
 
