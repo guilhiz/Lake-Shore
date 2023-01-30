@@ -34,6 +34,10 @@ export const ContainerProducts = styled.div`
   width: 100%;
   margin-top: 10px;
   overflow: auto;
+  > p {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
 `;
 
 export const ProductCard = styled.div`
@@ -103,7 +107,7 @@ export const checkoutButton = styled.button`
   border: 1px solid #c26f11;
   border-radius: 5px;
   background-color: #ff8906;
-  margin: 12px auto 0px;
+  margin: 20px auto 0px;
   cursor: pointer;
   :hover {
     opacity: 0.6;

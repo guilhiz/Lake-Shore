@@ -22,13 +22,26 @@ function Cart() {
     try {
       const response = await api.get("/cart/products", config);
       const data = response.data;
-      console.log(data);
       setProducts(data.products);
       setSumProducts(data.sumProducts);
       setCart_id(data.cart_id);
     } catch (error) {
       console.log(error);
       if (error.status === 401) console.log(error);
+    }
+  };
+
+  const finalizingCart = async () => {
+    const token = localStorage.getItem("token-access");
+    const config = { headers: { Authorization: `Bearer ${token}` } };
+    try {
+      const res = await api.post("/closeShoppingCart", { cart_id }, config);
+      console.log(res);
+      alert("Pedido feito com sucesso");
+      navigate("/");
+    } catch (err) {
+      if (err.status === 401) navigate("/sign-in");
+      console.log(err);
     }
   };
 
@@ -45,27 +58,29 @@ function Cart() {
       <S.Card>
         <S.Title>Carrinho de compras</S.Title>
         <S.ContainerProducts>
-          {products.map((item, index) => {
-            return (
-              <div key={index}>
-                <S.ProductCard>
-                  <S.ImageProduct src={item.product.image} alt="" />
-                  <S.LabelCard>
-                    <S.TitleProduct>{item.product.name}</S.TitleProduct>
-                    <S.SubTitleProduct>{item.product.description}</S.SubTitleProduct>
-                  </S.LabelCard>
-                  <S.PriceProduct>{`R$ ${item.product.price}`}</S.PriceProduct>
-                </S.ProductCard>
-              </div>
-            );
-          })}
+          {products.length < 1 && <p>Primeiro adicione um item ao carrinho para vê-lo aqui</p>}
+          {products &&
+            products.map((item, index) => {
+              return (
+                <div key={index}>
+                  <S.ProductCard>
+                    <S.ImageProduct src={item.product.image} alt="" />
+                    <S.LabelCard>
+                      <S.TitleProduct>{item.product.name}</S.TitleProduct>
+                      <S.SubTitleProduct>{item.product.description}</S.SubTitleProduct>
+                    </S.LabelCard>
+                    <S.PriceProduct>{`R$ ${item.product.price}`}</S.PriceProduct>
+                  </S.ProductCard>
+                </div>
+              );
+            })}
         </S.ContainerProducts>
       </S.Card>
       <S.ContainerButton>
         <p>
           Total ({products?.length} itens): ${useFormatter.format(sumProducts)}
         </p>
-        <S.checkoutButton>Fechar pedido</S.checkoutButton>
+        <S.checkoutButton onClick={finalizingCart}>Fechar pedido</S.checkoutButton>
       </S.ContainerButton>
     </S.Container>
   );

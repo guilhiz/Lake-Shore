@@ -30,6 +30,7 @@ function ProductCarousel({ products }) {
       console.log(error);
     }
   };
+ 
 
   if (products === null) {
     return (
