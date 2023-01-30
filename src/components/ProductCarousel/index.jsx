@@ -3,13 +3,35 @@ import * as S from "./styles";
 import { ClipLoader } from "react-spinners";
 import { ShoppingCartSimple } from "phosphor-react";
 import { useFormatter } from "../../hooks";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useProducts } from "../../pages/Home/hooks";
+import { api } from "../../config/api";
+import { useNavigate } from "react-router-dom";
 
 function ProductCarousel({ products }) {
+  const { cart, setCart } = useProducts();
+  const navigate = useNavigate()
+
+  function addProductCart(product) {
+    addProduct(product._id)
+  }
+
+  const addProduct = async (product_id) => {
+    try {
+      const token = localStorage.getItem("token-access")
+      const config = { headers: { Authorization: `Bearer ${token}` } };
+      const response = await api.post('/addItemCart', {cart_id: cart ? cart._id : null, product_id}, config)
+      console.log(response);
+      setCart(response.data)
+    } catch (error) {
+      if (error.status === 401) navigate('/sign-in')
+      console.log(error);
+    }
+  }
+
   if (products === null) {
     return (
       <S.ContainerLoading>
@@ -55,7 +77,7 @@ function ProductCarousel({ products }) {
               <S.CardFooter>
                 <span>{useFormatter.format(p.price)}</span>
                 <div>
-                  <ShoppingCartSimple size={25} color="#000000" />
+                  <ShoppingCartSimple onClick={() => addProductCart(p)} size={25} color="#000000" />
                 </div>
               </S.CardFooter>
             </S.Card>

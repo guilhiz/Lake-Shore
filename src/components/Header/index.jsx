@@ -23,8 +23,9 @@ function Header() {
           <Link to="/sign-in">
             <User size={32} color="#b8c1ec" />
           </Link>
-
-          <ShoppingCartSimple size={32} color="#b8c1ec" />
+          <Link to="/cart">
+            <ShoppingCartSimple size={32} color="#fffffe" />
+          </Link>
         </S.IconsGroup>
       </S.Content>
     </S.Header>
