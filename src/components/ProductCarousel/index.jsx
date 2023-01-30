@@ -13,24 +13,24 @@ import { useNavigate } from "react-router-dom";
 
 function ProductCarousel({ products }) {
   const { cart, setCart } = useProducts();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function addProductCart(product) {
-    addProduct(product._id)
+    addProduct(product._id);
   }
 
   const addProduct = async (product_id) => {
     try {
-      const token = localStorage.getItem("token-access")
+      const token = localStorage.getItem("token-access");
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await api.post('/addItemCart', {cart_id: cart ? cart._id : null, product_id}, config)
-      console.log(response);
-      setCart(response.data)
+      const response = await api.post("/addItemCart", { cart_id: cart ? cart._id : null, product_id }, config);
+      setCart(response.data);
     } catch (error) {
-      if (error.status === 401) navigate('/sign-in')
+      if (error.status === 401) navigate("/sign-in");
       console.log(error);
     }
-  }
+  };
+ 
 
   if (products === null) {
     return (
