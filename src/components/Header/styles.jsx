@@ -28,7 +28,6 @@ export const Content = styled.div`
     color: #333333;
     text-shadow: 0px 4px 2px rgba(255, 255, 255, 0.4);
   }
-
 `;
 
 export const IconsGroup = styled.div`
@@ -40,4 +39,23 @@ export const IconsGroup = styled.div`
       opacity: 0.6;
     }
   }
+  a {
+    position: relative;
+  }
+`;
+
+export const CartItemCount = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #ff8906;
+  border-radius: 50%;
+  color: #fff;
+
+  position: absolute;
+  z-index: 12;
+  top: -5px;
+  right: -16px;
 `;

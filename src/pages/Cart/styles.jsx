@@ -49,6 +49,7 @@ export const ProductCard = styled.div`
   padding: 0px 22px;
   background-color: #fff;
   border: 1px solid #acacac;
+  position: relative;
 `;
 export const ImageProduct = styled.img`
   height: 80%;
@@ -100,7 +101,7 @@ export const ContainerButton = styled.div`
     width: 100%;
   }
 `;
-export const checkoutButton = styled.button`
+export const CheckoutButton = styled.button`
   width: 100%;
   height: 40px;
   border: none;
@@ -115,6 +116,13 @@ export const checkoutButton = styled.button`
   :active {
     scale: 0.9;
   }
+`;
+
+export const ShowQuantity = styled.div`
+  position: absolute;
+  right: 7%;
+  top: 35%;
+  font-weight: 700;
 `;
 
 export const ContainerLoading = styled.div`
