@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
 import { AuthContext } from "../../contexts/auth/AuthContext";
+import { Link } from "react-router-dom";
+
 import { ShoppingCartSimple, User, MagnifyingGlass, House, PlusCircle } from "phosphor-react";
 
 import * as S from "./styles";
