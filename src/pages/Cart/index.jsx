@@ -69,7 +69,7 @@ function Cart() {
                       <S.TitleProduct>{item.product.name}</S.TitleProduct>
                       <S.SubTitleProduct>{item.product.description}</S.SubTitleProduct>
                     </S.LabelCard>
-                    <S.PriceProduct>{`R$ ${item.product.price}`}</S.PriceProduct>
+                    <S.PriceProduct>{useFormatter.format(item.product.price)}</S.PriceProduct>
                   </S.ProductCard>
                 </div>
               );
@@ -78,7 +78,7 @@ function Cart() {
       </S.Card>
       <S.ContainerButton>
         <p>
-          Total ({products?.length} itens): ${useFormatter.format(sumProducts)}
+          Total ({products?.length} {products?.length > 1 ? "itens" : "item"}): {useFormatter.format(sumProducts)}
         </p>
         <S.checkoutButton onClick={finalizingCart}>Fechar pedido</S.checkoutButton>
       </S.ContainerButton>
