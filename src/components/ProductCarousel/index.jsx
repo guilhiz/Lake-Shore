@@ -35,7 +35,7 @@ function ProductCarousel({ products }) {
         </li>
       </S.FilterList>
       <Swiper
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerView={4}
         grabCursor={true}
         navigation={true}

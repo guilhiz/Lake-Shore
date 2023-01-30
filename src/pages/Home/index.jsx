@@ -2,6 +2,7 @@ import React from "react";
 import { useProducts } from "./hooks";
 import { useAos } from "../../hooks";
 import ProductCarousel from "../../components/ProductCarousel";
+import Footer from "../../components/Footer";
 import * as S from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -77,6 +78,7 @@ function Home() {
           <ProductCarousel products={services} />
         </S.SectionProduct>
       </S.Content>
+      <Footer />
     </S.Container>
   );
 }

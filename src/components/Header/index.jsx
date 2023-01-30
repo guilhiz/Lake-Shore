@@ -9,7 +9,7 @@ function Header() {
       <S.Content>
         <Link to="/">
 
-          <h1>LakeShore</h1>
+          <h1>Lake Shore</h1>
         </Link>
 
         <S.IconsGroup>
