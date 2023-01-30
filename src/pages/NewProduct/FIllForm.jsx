@@ -21,6 +21,7 @@
             alert("Produto cadastrado com sucesso");
             navigate("/");
         } catch (error) {
+            console.log(error);
             alert(error.message);
         }
     }

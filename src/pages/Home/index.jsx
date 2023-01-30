@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 
 function Home() {
   const { furniture, electronics, clothes, services } = useProducts();
+  
 
   return (
     <S.Container>

@@ -6,6 +6,7 @@ export const useProducts = () => {
   const [electronics, setElectronics] = useState(null);
   const [clothes, setClothes] = useState(null);
   const [services, setServices] = useState(null);
+  const [cart, setCart] = useState(null)
 
   const productsByCategory = async () => {
     const token = localStorage.getItem("token-access");
@@ -25,9 +26,21 @@ export const useProducts = () => {
     }
   };
 
+  const shoppingCart = async () => {
+    const token = localStorage.getItem("token-access");
+    const config = { headers: { Authorization: `Bearer ${token}` } };
+    try {
+      const response = await api.get('/cart', config)
+      setCart(response.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     productsByCategory();
+    shoppingCart()
   }, []);
 
-  return { furniture, electronics, clothes, services };
+  return { furniture, electronics, clothes, services, cart, setCart };
 };
