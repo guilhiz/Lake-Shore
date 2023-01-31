@@ -33,39 +33,41 @@ export default function Checkout() {
 
   return (
     <S.Container>
-      <S.Title>Informe os dados para pagamento</S.Title>
-      <S.InputsBox onSubmit={finishCheckout}>
-        <input
-          type="text"
-          placeholder="Nome impresso no cartão"
-          value={nameCard}
-          onChange={(event) => setNameCard(event.target.value)}
-          required
-        />
-        <input type="text" placeholder="CPF" value={cpf} onChange={(event) => setCpf(event.target.value)} required />
-        <input
-          type="text"
-          placeholder="Dígitos do cartão"
-          value={digit}
-          onChange={(event) => setDigit(event.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Validade"
-          value={valid}
-          onChange={(event) => setValid(event.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Código de segurança"
-          value={secCode}
-          onChange={(event) => setSecCode(event.target.value)}
-          required
-        />
-        <S.Button>Confirmar</S.Button>
-      </S.InputsBox>
+      <S.Content>
+        <S.Title>Informe os dados para pagamento</S.Title>
+        <S.InputsBox onSubmit={finishCheckout}>
+          <input
+            type="text"
+            placeholder="Nome impresso no cartão"
+            value={nameCard}
+            onChange={(event) => setNameCard(event.target.value)}
+            required
+          />
+          <input type="text" placeholder="CPF" value={cpf} onChange={(event) => setCpf(event.target.value)} required />
+          <input
+            type="text"
+            placeholder="Dígitos do cartão"
+            value={digit}
+            onChange={(event) => setDigit(event.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Validade"
+            value={valid}
+            onChange={(event) => setValid(event.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Código de segurança"
+            value={secCode}
+            onChange={(event) => setSecCode(event.target.value)}
+            required
+          />
+          <S.Button>Confirmar</S.Button>
+        </S.InputsBox>
+      </S.Content>
     </S.Container>
   );
 }
