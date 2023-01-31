@@ -26,7 +26,7 @@
         }
     }
     return (
-        <>
+        <S.ContainerForm>
             <S.Title>Conte um pouco mais sobre o seu produto</S.Title>
             <S.FormStyled onSubmit={register}>
                 <input type="text" placeholder="Nome" value={name} onChange={(event) => (setName(event.target.value))} required />
@@ -35,6 +35,6 @@
                 <input type="text" placeholder="Agora, dê seu preço" value={price} onChange={(event) => (setPrice(event.target.value))} required />
                 <button type="submit">Cadastrar anúncio</button>
             </S.FormStyled>
-        </>
+        </S.ContainerForm>
     )
 }
