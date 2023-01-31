@@ -10,12 +10,7 @@ function Cart() {
   const [products, setProducts] = useState(null);
   const [sumProducts, setSumProducts] = useState(0);
   const [cart_id, setCart_id] = useState(null);
-
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   const getProducts = async () => {
     const token = localStorage.getItem("token-access");
@@ -33,17 +28,9 @@ function Cart() {
     }
   };
 
-  const finalizingCart = async () => {
-    const token = localStorage.getItem("token-access");
-    const config = { headers: { Authorization: `Bearer ${token}` } };
-    try {
-      await api.post("/closeShoppingCart", { cart_id }, config);
-      navigate("/checkout");
-    } catch (err) {
-      if (err.status === 401) navigate("/sign-in");
-      console.log(err);
-    }
-  };
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   if (products === null) {
     return (
@@ -52,6 +39,12 @@ function Cart() {
       </S.ContainerLoading>
     );
   }
+
+  const handleClick = () => {
+    navigate("/checkout", {
+      state: { cart_id },
+    });
+  };
 
   return (
     <S.Container>
@@ -81,7 +74,9 @@ function Cart() {
         <p>
           Total ({products?.length} {products?.length > 1 ? "itens" : "item"}): {useFormatter.format(sumProducts)}
         </p>
-        <S.CheckoutButton onClick={finalizingCart}>Fechar pedido</S.CheckoutButton>
+        <S.CheckoutButton disabled={products.length < 1} onClick={handleClick}>
+          Fechar pedido
+        </S.CheckoutButton>
       </S.ContainerButton>
     </S.Container>
   );
