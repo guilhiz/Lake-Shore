@@ -110,11 +110,20 @@ export const CheckoutButton = styled.button`
   background-color: #ff8906;
   margin: 20px auto 0px;
   cursor: pointer;
+  font-size: 1.3em;
   :hover {
     opacity: 0.6;
   }
   :active {
     scale: 0.9;
+  }
+  :disabled {
+    :hover {
+      opacity: 1;
+    }
+    :active {
+      scale: 1;
+    }
   }
 `;
 

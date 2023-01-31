@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/auth/AuthContext";
 import { useState } from "react";
 import { api } from "../../config/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Checkout() {
   const { setQuantityProducts } = useContext(AuthContext);
@@ -12,6 +12,8 @@ export default function Checkout() {
   const [digit, setDigit] = useState("");
   const [valid, setValid] = useState("");
   const [secCode, setSecCode] = useState("");
+  const location = useLocation();
+  const { cart_id } = location.state;
   const navigate = useNavigate();
 
   async function finishCheckout(event) {
@@ -19,6 +21,7 @@ export default function Checkout() {
     const token = localStorage.getItem("token-access");
     const config = { headers: { Authorization: `Bearer ${token}` } };
     try {
+      await api.post("/closeShoppingCart", { cart_id }, config);
       await api.post("/checkoutfinal", { nameCard, cpf, digit, valid, secCode }, config);
       setQuantityProducts(0);
       alert("Compra efetuada com sucesso");
